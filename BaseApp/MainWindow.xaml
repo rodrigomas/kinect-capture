@@ -3,38 +3,40 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BaseApp"
-        xmlns:Custom="http://schemas.microsoft.com/kinect/2014" x:Class="BaseApp.MainWindow"
+        xmlns:local="clr-namespace:KinectCapture"
+        xmlns:Custom="http://schemas.microsoft.com/kinect/2014" x:Class="KinectCapture.MainWindow"
         mc:Ignorable="d"
-        Title="Kinect One Capture" Height="607" Width="1079" 
-        Closing="MainWindow_Closing">
+        Title="Kinect One Capture" Height="629.224" Width="1079" 
+        Closing="MainWindow_Closing" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Images/Kinect.ico">
 
     <Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="428" Margin="7,7,0,0" Stroke="Black" VerticalAlignment="Top" Width="518"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="428" Margin="539,7,0,0" Stroke="Black" VerticalAlignment="Top" Width="518"/>
 
-        <Button x:Name="ButtonOK" Content="Start" HorizontalAlignment="Left" Margin="11,449,0,0" VerticalAlignment="Top" Width="75" Click="ButtonOK_Click"/>
+        <Button x:Name="ButtonOK" Content="Connect" HorizontalAlignment="Left" Margin="11,467,0,0" VerticalAlignment="Top" Width="75" Click="ButtonOK_Click"/>
 
-        <Button x:Name="button" Content="REC" HorizontalAlignment="Left" Margin="762,530,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Visibility="Hidden"/>
-        <Button x:Name="button1" Content="Play" HorizontalAlignment="Left" Margin="842,530,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click" Visibility="Hidden"/>
-        <Label x:Name="label" Content="Frames:" HorizontalAlignment="Left" Margin="11,474,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
-        <Label x:Name="FramesLabel" Content="0" HorizontalAlignment="Left" Margin="77,474,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.053,0.115"/>
-        <Button x:Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="171,449,0,0" VerticalAlignment="Top" Width="75" Click="StopButton_Click"/>
-        <Button x:Name="RecordButton" Content="Record" HorizontalAlignment="Left" Margin="91,449,0,0" VerticalAlignment="Top" Width="75" Click="RecordButton_Click"/>
-        <Button x:Name="Export" Content="Export" HorizontalAlignment="Left" Margin="421,503,0,0" VerticalAlignment="Top" Width="75" Click="Export_Click"/>
-        <Label x:Name="label1" Content="Export Path:" HorizontalAlignment="Left" Margin="11,500,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ExportPath" HorizontalAlignment="Left" Height="23" Margin="89,501,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
-        <Button x:Name="FolderButton" Content="..." HorizontalAlignment="Left" Margin="394,503,0,0" VerticalAlignment="Top" Width="22" Click="FolderButton_Click"/>
-        <ProgressBar x:Name="ExportProgress" HorizontalAlignment="Left" Height="7" Margin="89,524,0,0" VerticalAlignment="Top" Width="300"/>
+        <Label x:Name="label" Content="Frames:" HorizontalAlignment="Left" Margin="11,492,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
+        <Label x:Name="FramesLabel" Content="0" HorizontalAlignment="Left" Margin="77,492,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.053,0.115"/>
+        <Button x:Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="171,467,0,0" VerticalAlignment="Top" Width="75" Click="StopButton_Click" IsEnabled="False"/>
+        <Button x:Name="RecordButton" Content="Record" HorizontalAlignment="Left" Margin="91,467,0,0" VerticalAlignment="Top" Width="75" Click="RecordButton_Click" IsEnabled="False"/>
+        <Button x:Name="Export" Content="Export" HorizontalAlignment="Left" Margin="421,521,0,0" VerticalAlignment="Top" Width="75" Click="Export_Click"/>
+        <Label x:Name="label1" Content="Export Path:" HorizontalAlignment="Left" Margin="11,518,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ExportPath" HorizontalAlignment="Left" Height="23" Margin="89,519,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="300" AcceptsReturn="False"/>
+        <Button x:Name="FolderButton" Content="..." HorizontalAlignment="Left" Margin="394,521,0,0" VerticalAlignment="Top" Width="22" Click="FolderButton_Click"/>
+        <ProgressBar x:Name="ExportProgress" HorizontalAlignment="Left" Height="7" Margin="89,542,0,0" VerticalAlignment="Top" Width="300"/>
         <Image x:Name="ColorImageViewer" HorizontalAlignment="Left" Height="424
                " Margin="10,10,0,0" VerticalAlignment="Top" Width="512"/>
         <Image x:Name="DepthImageViewer" HorizontalAlignment="Left" Height="424" Margin="542,10,0,0" VerticalAlignment="Top" Width="512"/>
-        <Label x:Name="label_Copy" Content="Memory:" HorizontalAlignment="Left" Margin="542,445,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
-        <ProgressBar x:Name="MemoryBar" HorizontalAlignment="Left" Height="26" Margin="604,445,0,0" VerticalAlignment="Top" Width="435"/>
-        <Label x:Name="MemoryLB" Content="0 MBytes (0%)" HorizontalAlignment="Left" Margin="604,474,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
-        <Label x:Name="label_Copy1" Content="Usage:" HorizontalAlignment="Left" Margin="554,501,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
-        <ProgressBar x:Name="UsageBar" HorizontalAlignment="Left" Height="26" Margin="604,501,0,0" VerticalAlignment="Top" Width="435"/>
-        <Label x:Name="UsageLB" Content="0 MBytes (0%)" HorizontalAlignment="Left" Margin="604,530,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
-        <Label x:Name="ExportLB" Content="                            " HorizontalAlignment="Left" Margin="91,536,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
+        <Label x:Name="label_Copy" Content="Memory:" HorizontalAlignment="Left" Margin="542,463,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
+        <ProgressBar x:Name="MemoryBar" HorizontalAlignment="Left" Height="26" Margin="604,463,0,0" VerticalAlignment="Top" Width="435"/>
+        <Label x:Name="MemoryLB" Content="0 MBytes (0%)" HorizontalAlignment="Left" Margin="604,492,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
+        <Label x:Name="label_Copy1" Content="Usage:" HorizontalAlignment="Left" Margin="554,519,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
+        <ProgressBar x:Name="UsageBar" HorizontalAlignment="Left" Height="26" Margin="604,519,0,0" VerticalAlignment="Top" Width="435"/>
+        <Label x:Name="UsageLB" Content="0 MBytes (0%)" HorizontalAlignment="Left" Margin="604,548,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
+        <Label x:Name="ExportLB" Content="                            " HorizontalAlignment="Left" Margin="91,554,0,-4" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.038"/>
+        <Label x:Name="label2" Content="Uncompressed Color" HorizontalAlignment="Left" Margin="4,433,0,0" VerticalAlignment="Top" Foreground="Gray"/>
+        <Label x:Name="label3" Content="Depth" HorizontalAlignment="Left" Margin="535,432,0,0" VerticalAlignment="Top" Foreground="Gray"/>
+        <Button x:Name="About" Content="?" HorizontalAlignment="Left" Margin="501,467,0,0" VerticalAlignment="Top" Width="24" Click="About_Click"/>
+        <Button x:Name="ClearButton" Content="Clear" HorizontalAlignment="Left" Margin="251,467,0,0" VerticalAlignment="Top" Width="75" Click="ClearButton_Click"/>
     </Grid>
 </Window>

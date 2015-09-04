@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseApp", "BaseApp\BaseApp.csproj", "{0D045C10-7A12-4AF6-B22C-937D8479BCC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinectCapture", "BaseApp\KinectCapture.csproj", "{0D045C10-7A12-4AF6-B22C-937D8479BCC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

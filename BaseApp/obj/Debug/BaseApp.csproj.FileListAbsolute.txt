@@ -20,3 +20,6 @@ c:\users\admin\documents\visual studio 2015\Projects\BaseApp\BaseApp\obj\Debug\B
 c:\users\admin\documents\visual studio 2015\Projects\BaseApp\BaseApp\obj\Debug\BaseApp.csproj.GenerateResource.Cache
 c:\users\admin\documents\visual studio 2015\Projects\BaseApp\BaseApp\obj\Debug\BaseApp.exe
 c:\users\admin\documents\visual studio 2015\Projects\BaseApp\BaseApp\obj\Debug\BaseApp.pdb
+C:\Users\admin\Dropbox\DevProjects\kinectcapturev2\BaseApp\bin\Debug\BaseApp.exe.config
+C:\Users\admin\Dropbox\DevProjects\kinectcapturev2\BaseApp\obj\Debug\BaseApp.exe
+C:\Users\admin\Dropbox\DevProjects\kinectcapturev2\BaseApp\obj\Debug\BaseApp.pdb
